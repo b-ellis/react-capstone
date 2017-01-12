@@ -1,0 +1,45 @@
+.loader{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.navbarDiv{
+	height: 50px;
+    color: #859258;
+    background-color: #646b4e;
+}
+
+.navlist{
+	list-style: none;
+	display: -webkit-box;
+	/*margin: 10px 45px 0px 45px;*/
+}
+
+.navlist > li {
+	padding-left: 10px;
+}
+
+.form-group{
+	padding: 100px;
+}
+
+.input-group{
+	width: 300px;
+}
+
+.formDiv{
+	text-align: center;
+	background-image: url('http://360dynamictechnology.com/wp-content/uploads/2014/01/world-map.png');
+	height: 300px;
+	opacity: .7;
+}
+
+.countriesDiv{
+	overflow: auto !important;
+	overflow-x: hidden;
+}
+.countriesList{
+	list-style: none;
+	display: -webkit-box;
+	padding-left: 0px;
+}
