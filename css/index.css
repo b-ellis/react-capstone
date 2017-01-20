@@ -1,11 +1,69 @@
+body{
+	background-image: url('http://360dynamictechnology.com/wp-content/uploads/2014/01/world-map.png');
+	height: 100%;
+	/*opacity: .7;*/
+}
+.center{
+	width: 100%;
+	height: 100%;
+}
 .loader{
+	width: 100%;
+	height: 100%;
 	text-align: center;
 	margin: 0 auto;
 }
 
+.overlay{
+	display: block !important;
+	width: 100%;
+	height: 100%;
+	color: #ccc;
+	background: #646b4e;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	z-index: 1000;
+	display: none;
+	overflow: auto
+}
+
+.overlay a{
+	padding: 20px 40px;
+	float: right;
+}
+
+.overlay table{
+	border: 1px solid grey;
+	text-align: center;
+    margin: auto;
+    width: 600px;
+    margin-top: 50px;
+}
+
+.overlay thead{
+	text-align: center;
+    border-bottom: 1px solid grey;
+}
+
+.overlay thead tr th{
+	text-align: center;
+}
+
+.overlay tbody tr td {
+	border-bottom: 1px solid grey;
+	border-right: 1px solid grey;
+}
+
+a{
+	color: #ccc;
+}
+
 .navbarDiv{
 	height: 50px;
-    color: #859258;
+    /*color: #859258;*/
+    color: #ccc;
     background-color: #646b4e;
 }
 
@@ -17,10 +75,23 @@
 
 .navlist > li {
 	padding-left: 10px;
+	color: #ccc;
+}
+
+.content{
+	height: 381px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+    width: 850px;
+    margin: 0 auto;
+    margin-top: 80px;
+    background: #ccc;
+    background-color: rgba(100, 107, 78, 0.8);
 }
 
 .form-group{
-	padding: 100px;
+	padding: 20px;
+	padding-bottom: 0px;
 }
 
 .input-group{
@@ -29,17 +100,69 @@
 
 .formDiv{
 	text-align: center;
-	background-image: url('http://360dynamictechnology.com/wp-content/uploads/2014/01/world-map.png');
+	/*background-image: url('http://360dynamictechnology.com/wp-content/uploads/2014/01/world-map.png');*/
 	height: 300px;
-	opacity: .7;
+	/*opacity: .7;*/
+}
+
+.formInput{
+	text-align: center;
 }
 
 .countriesDiv{
-	overflow: auto !important;
-	overflow-x: hidden;
+	/*padding-top: 66px;*//*
+	overflow: auto;
+	border-bottom: grey solid 1px;*/
+	width: 350px;
 }
+
 .countriesList{
-	list-style: none;
-	display: -webkit-box;
-	padding-left: 0px;
+	/*list-style: none;*/
+	/*display: -webkit-box;*/
+	margin-right: 50px;
+	margin-top: 16px;
+    margin-bottom: 16px;
+	/*margin-bottom: 0px*/
+}
+
+.countryButton:visited{
+	background: #859258;
+	outline: none;
+}
+
+.countryButton:focus {
+	background: #859258;
+	outline: none;
+}
+
+.country{
+	padding: 5px;
+	/*display: inline;*/
+	display: -webkit-inline-box;
+    width: 105px;
+}
+
+.countryButton{
+	width: 45px;
+	border-radius: 6px;
+	background-color: #fff;
+}
+
+.outDiv{
+	/*padding-top: 50px;*/
+    text-align: center;
+}
+.outputDiv{
+	margin: 0 auto;
+}
+.output{
+	width: 72px;
+    height: 34px;
+}
+output{
+	border: 1px solid #cccccc;
+    border-radius: 0px 6px 6px 0px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    background: #fff;
 }
