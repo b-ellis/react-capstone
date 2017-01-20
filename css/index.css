@@ -1,7 +1,6 @@
 body{
 	background-image: url('http://360dynamictechnology.com/wp-content/uploads/2014/01/world-map.png');
 	height: 100%;
-	/*opacity: .7;*/
 }
 .center{
 	width: 100%;
@@ -62,7 +61,7 @@ a{
 
 .navbarDiv{
 	height: 50px;
-    /*color: #859258;*/
+    border-bottom: 1px solid #ccc;
     color: #ccc;
     background-color: #646b4e;
 }
@@ -70,7 +69,6 @@ a{
 .navlist{
 	list-style: none;
 	display: -webkit-box;
-	/*margin: 10px 45px 0px 45px;*/
 }
 
 .navlist > li {
@@ -100,9 +98,7 @@ a{
 
 .formDiv{
 	text-align: center;
-	/*background-image: url('http://360dynamictechnology.com/wp-content/uploads/2014/01/world-map.png');*/
 	height: 300px;
-	/*opacity: .7;*/
 }
 
 .formInput{
@@ -110,19 +106,13 @@ a{
 }
 
 .countriesDiv{
-	/*padding-top: 66px;*//*
-	overflow: auto;
-	border-bottom: grey solid 1px;*/
 	width: 350px;
 }
 
 .countriesList{
-	/*list-style: none;*/
-	/*display: -webkit-box;*/
 	margin-right: 50px;
 	margin-top: 16px;
     margin-bottom: 16px;
-	/*margin-bottom: 0px*/
 }
 
 .countryButton:visited{
@@ -137,7 +127,6 @@ a{
 
 .country{
 	padding: 5px;
-	/*display: inline;*/
 	display: -webkit-inline-box;
     width: 105px;
 }
@@ -149,7 +138,6 @@ a{
 }
 
 .outDiv{
-	/*padding-top: 50px;*/
     text-align: center;
 }
 .outputDiv{
