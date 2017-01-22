@@ -85,6 +85,23 @@ const exchange = (exchange) => {
 	}
 }
 
+const HOVER_RATE = 'HOVER_RATE';
+const hoverRate = (hoverRate, hoverCode) => {
+	return{
+		type: HOVER_RATE,
+		hoverRate: hoverRate,
+		hoverCode: hoverCode
+	}
+}
+
+const HOVER_INFO = 'HOVER_INFO';
+const hoverInfo = (hoverInfo) => {
+	return{
+		type: HOVER_INFO,
+		hoverInfo: hoverInfo
+	}
+}
+
 exports.fetchAPI = fetchAPI;
 
 exports.FETCH_API_SUCCESS = FETCH_API_SUCCESS;
@@ -104,3 +121,9 @@ exports.getCode = getCode;
 
 exports.EXCHANGE = EXCHANGE;
 exports.exchange = exchange;
+
+exports.HOVER_RATE = HOVER_RATE;
+exports.hoverRate = hoverRate;
+
+exports.HOVER_INFO = HOVER_INFO;
+exports.hoverInfo = hoverInfo;

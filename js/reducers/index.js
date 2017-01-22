@@ -5,7 +5,7 @@ const State = {
 	data: {
 		rates:{}
 	},
-	// exchange: null
+	hoverInfo: false,
 }
 
 const reducer = (state, action) => {
@@ -41,6 +41,68 @@ const reducer = (state, action) => {
 			exchange: action.exchange
 		});
 		return exchangeState;
+
+		case actions.HOVER_RATE:
+		const hoverRateState = Object.assign({}, state, {
+			hoverRate: action.hoverRate,
+			hoverCode: action.hoverCode
+		});
+		switch(hoverRateState.hoverCode){
+			case "AED":
+			hoverRateState.hoverCurrency = "United Arab Emirates Dirham";
+			break;
+
+			case "CAD":
+			hoverRateState.hoverCurrency = "Canadian Dollar";
+			break;
+
+			case "CNY":
+			hoverRateState.hoverCurrency = "Chinese Yuan";
+			break;
+
+			case "HKD":
+			hoverRateState.hoverCurrency = "Hong Kong Dollar";
+			break;
+
+			case "MXN":
+			hoverRateState.hoverCurrency = "Mexican Peso";
+			break;
+
+			case "RUB":
+			hoverRateState.hoverCurrency = "Russian Ruble";
+			break;
+
+			case "BTC":
+			hoverRateState.hoverCurrency = "Bitcoin";
+			break;
+
+			case "CHF":
+			hoverRateState.hoverCurrency = "Swiss Franc";
+			break;
+
+			case "EUR":
+			hoverRateState.hoverCurrency = "Euro";
+			break;
+
+			case "INR":
+			hoverRateState.hoverCurrency = "Indian Rupee";
+			break;
+
+			case "NZD":
+			hoverRateState.hoverCurrency = "New Zealand Dollar";
+			break;
+
+			case "THB":
+			hoverRateState.hoverCurrency = "Thai Baht";
+			break;
+		}
+		return hoverRateState;
+
+		case actions.HOVER_INFO:
+		const hoverInfoState = Object.assign({}, state, {
+			hoverInfo: action.hoverInfo
+		});
+		return hoverInfoState;
 	}
 	return state;
 }

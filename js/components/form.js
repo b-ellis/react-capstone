@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import actions from '../actions/index';
 import Country from './country';
+import Info from './info';
 
 class Form extends React.Component {
 	constructor(){
@@ -36,6 +37,9 @@ class Form extends React.Component {
 						{countryList}
 					</ul>
 				</div>
+				<Info hoverRate={this.props.hoverRate} 
+					  hoverInfo={this.props.hoverInfo}
+					  hoverCurrency={this.props.hoverCurrency}/>
 			</form>
 		)
 	}

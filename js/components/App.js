@@ -34,7 +34,10 @@ class App extends React.Component{
 					<Form onSubmit={this.handleSubmit}
 						  rates = {Object.values(this.props.state.data.rates)} 
 						  countries = {Object.keys(this.props.state.data.rates)}
-						  amount={this.props.state.amount} />
+						  amount={this.props.state.amount} 
+						  hoverRate={this.props.state.hoverRate}
+						  hoverInfo={this.props.state.hoverInfo}
+						  hoverCurrency={this.props.state.hoverCurrency}/>
 					<Output state={this.props.state} exchange={this.props.state.exchange} />
 				</div>
 			</div>
