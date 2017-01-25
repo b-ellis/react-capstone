@@ -20,9 +20,9 @@ class App extends React.Component{
 	handleSubmit(e){
 		e.preventDefault();
 		const amount = this.props.state.amount;
-		const USD = "USD";
+		const base = this.props.state.baseRate;
 		const currency = this.props.state.code;
-		const convert = fx.convert(amount, {from: USD, to: currency});
+		const convert = fx.convert(amount, {from: base, to: currency});
 		const exchange = convert.toFixed(2);
 		this.props.dispatch(actions.exchange(exchange));
 	}
@@ -35,6 +35,7 @@ class App extends React.Component{
 						  rates = {Object.values(this.props.state.data.rates)} 
 						  countries = {Object.keys(this.props.state.data.rates)}
 						  amount={this.props.state.amount} 
+						  base={this.props.state.baseRate}
 						  hoverRate={this.props.state.hoverRate}
 						  hoverInfo={this.props.state.hoverInfo}
 						  hoverCurrency={this.props.state.hoverCurrency}/>

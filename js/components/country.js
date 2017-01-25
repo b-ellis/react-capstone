@@ -16,12 +16,11 @@ class Country extends React.Component{
 		this.mouseLeave = this.mouseLeave.bind(this);
 	}
 	settings(){
-		this.props.dispatch(actions.getRate(this.props.rates));
 		this.props.dispatch(actions.getCode(this.props.text));
 		const amount = this.props.amount;
-		const USD = "USD";
+		const base = this.props.base;
 		const currency = this.props.text;
-		const convert = fx.convert(amount, {from: USD, to: currency});
+		const convert = fx.convert(amount, {from: base, to: currency});
 		const exchange = convert.toFixed(2);
 		this.props.dispatch(actions.exchange(exchange));
 	}

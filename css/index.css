@@ -87,6 +87,11 @@ a{
     background-color: rgba(100, 107, 78, 0.8);
 }
 
+select{
+	background: #eee;
+	border: none;
+}
+
 .form-group{
 	padding: 20px;
 	padding-bottom: 0px;
@@ -111,8 +116,8 @@ a{
 
 .countriesList{
 	margin-right: 50px;
-	margin-top: 16px;
-    margin-bottom: 16px;
+	/*margin-top: 16px;
+    margin-bottom: 16px;*/
 }
 
 .countryButton:visited{

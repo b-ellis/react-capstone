@@ -61,14 +61,6 @@ const addUserAmount = (amount) => {
 	}
 }
 
-const GET_RATE = 'GET_RATE';
-const getRate = (rate) => {
-	return{
-		type: GET_RATE,
-		rate: rate
-	}
-}
-
 const GET_CODE = 'GET_CODE';
 const getCode = (code) => {
 	return{
@@ -102,6 +94,14 @@ const hoverInfo = (hoverInfo) => {
 	}
 }
 
+const BASE_RATE = 'BASE_RATE';
+const changeBase = (baseRate) => {
+	return{
+		type: BASE_RATE,
+		baseRate: baseRate
+	}
+}
+
 exports.fetchAPI = fetchAPI;
 
 exports.FETCH_API_SUCCESS = FETCH_API_SUCCESS;
@@ -112,9 +112,6 @@ exports.fetchAPIError = fetchAPIError;
 
 exports.USER_AMOUNT = USER_AMOUNT;
 exports.addUserAmount = addUserAmount;
-
-exports.GET_RATE = GET_RATE;
-exports.getRate = getRate;
 
 exports.GET_CODE = GET_CODE;
 exports.getCode = getCode;
@@ -127,3 +124,6 @@ exports.hoverRate = hoverRate;
 
 exports.HOVER_INFO = HOVER_INFO;
 exports.hoverInfo = hoverInfo;
+
+exports.BASE_RATE = BASE_RATE;
+exports.changeBase = changeBase;

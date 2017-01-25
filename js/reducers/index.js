@@ -6,6 +6,7 @@ const State = {
 		rates:{}
 	},
 	hoverInfo: false,
+	baseRate: 'USD'
 }
 
 const reducer = (state, action) => {
@@ -23,12 +24,6 @@ const reducer = (state, action) => {
 			amount: action.amount
 		});
 		return amountState;
-
-		case actions.GET_RATE:
-		const rateState = Object.assign({}, state, {
-			rate: action.rate
-		});
-		return rateState;
 
 		case actions.GET_CODE:
 		const codeState = Object.assign({}, state, {
@@ -95,6 +90,10 @@ const reducer = (state, action) => {
 			case "THB":
 			hoverRateState.hoverCurrency = "Thai Baht";
 			break;
+
+			case "USD":
+			hoverRateState.hoverCurrency = "United States Dollar";
+			break;
 		}
 		return hoverRateState;
 
@@ -103,6 +102,12 @@ const reducer = (state, action) => {
 			hoverInfo: action.hoverInfo
 		});
 		return hoverInfoState;
+
+		case actions.BASE_RATE:
+		const baseRateState = Object.assign({}, state, {
+			baseRate: action.baseRate
+		});
+		return baseRateState;
 	}
 	return state;
 }
