@@ -161,6 +161,7 @@ select:focus{
 .info > h5{
 	text-align: left;
 	padding-left: 10px;
+	padding: 12px;
 }
 
 .info-text{
