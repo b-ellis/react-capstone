@@ -9,7 +9,7 @@ import Info from './info';
 class Form extends React.Component {
 	constructor(){
 		super();
-		this.state = {value: 'USD'}
+		this.state = {value: 'Base'}
 		this.inputChange = this.inputChange.bind(this);
 		this.handelChange = this.handelChange.bind(this);
 	}
@@ -40,7 +40,8 @@ class Form extends React.Component {
 				<label className="sr-only" htmlFor="exampleInputAmount">Amount (in dollars)</label>
 					<div className="input-group">
 						<div className="input-group-addon">
-							<select value={this.state.value} onChange={this.handelChange}>
+							<select name='base' required value={this.state.value} onChange={this.handelChange}>
+								<option disabled>Base</option>
 								{selectList}
 							</select>
 						</div>

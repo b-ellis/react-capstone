@@ -1,4 +1,3 @@
-// const fetch = require('isomorphic-fetch');
 import fetch from 'isomorphic-fetch';
 import fx from 'money';
 
@@ -35,7 +34,6 @@ const fetchAPI = () => {
                 fx.rates = data.rates;
                 fx.base = data.base;
             } else {
-                // If not, apply to fxSetup global:
                 var fxSetup = {
                     rates : data.rates,
                     base : data.base

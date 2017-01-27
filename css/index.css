@@ -92,6 +92,10 @@ select{
 	border: none;
 }
 
+select:focus{
+	outline: none;
+}
+
 .form-group{
 	padding: 20px;
 	padding-bottom: 0px;
