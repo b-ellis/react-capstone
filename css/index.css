@@ -152,7 +152,7 @@ select:focus{
     height: 120px;
     margin: auto;
     position: relative;
-   	bottom: 200px;
+   	bottom: 210px;
     border: 1px solid #ccc;
     background: rgba(100, 107, 78, 0.8);
     border-radius: 6px;
