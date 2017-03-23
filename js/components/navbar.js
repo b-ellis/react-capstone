@@ -5,7 +5,7 @@ class Navbar extends React.Component{
 	render(){
 		return(
 			<div className='navbarDiv'>
-				<h4 className='col-md-10'>React Exchange</h4>
+				<h4 className='col-md-10'>React Currency Exchange</h4>
 			</div>
 		)
 	}
