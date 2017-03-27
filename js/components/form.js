@@ -1,6 +1,9 @@
 import React from 'react';
 import 'react-bootstrap';
 import { connect } from 'react-redux';
+import getRate from 'money';
+import fx from 'money';
+import fxSetup from 'money';
 
 import actions from '../actions/index';
 import Country from './country';
@@ -18,8 +21,15 @@ class Form extends React.Component {
 	}
 	handelChange(event){
 		const value = event.target.value;
+		let rate;
+		event.target.childNodes.forEach((target, index) => {
+			if(target.value === value){
+				rate = target.id;	
+			}
+		})
 		this.setState({
-			value: value
+			value: value,
+			rate: rate
 		});
 		this.props.dispatch(actions.changeBase(value));
 	}
@@ -28,19 +38,19 @@ class Form extends React.Component {
 		const countries =  this.props.countries;
 		let countryList = [];
 		let selectList = [];
-		for(let i = 0; i < countries.length; i++){
-			if(i == 0 || i == 21 || i == 27 || i == 29 || i == 32 || i == 47 || i == 59 || i == 67 || i == 104 || i == 112 || i == 124 || i == 140 || i == 151){
-				countryList.push(<Country onSubmit={this.props.onSubmit} key={i} base={this.props.base} amount={this.props.amount} text={countries[i]} rates={rates[i]} />);
-				selectList.push(<option key={i}>{countries[i]}</option>)
+		countries.forEach((country, index) => {
+			if(country == 'AED' || country == 'CAD' || country == 'CNY' || country == 'HKD' || country == 'MXN' || country == 'RUB' || country == 'BTC' || country == 'CHF' || country == 'EUR' || country =='INR' || country == 'NZD' || country == 'THB' || country == 'USD'){
+				countryList.push(<Country baseRate={this.state.rate} onSubmit={this.props.onSubmit} key={index} base={this.props.base} amount={this.props.amount} text={countries[index]} rates={rates[index]} />);
+				selectList.push(<option id={rates[index]} key={index}>{country}</option>)
 			}
-		}
+		});
 		return(
 			<form className="form-inline formDiv" onSubmit={this.props.onSubmit}>
 				<div className="form-group">
 				<label className="sr-only" htmlFor="exampleInputAmount">Amount (in dollars)</label>
 					<div className="input-group">
 						<div className="input-group-addon">
-							<select name='base' required value={this.state.value} onChange={this.handelChange}>
+							<select name='base' required value={this.state.value} onChange={this.handelChange} >
 								<option disabled>Base</option>
 								{selectList}
 							</select>

@@ -19,6 +19,12 @@ const reducer = (state, action) => {
 		});
 		return newState;
 
+		case actions.FETCH_BaseAPI_SUCCESS:
+		const baseState = Object.assign({}, state, {
+			data: action.data
+		});
+		return baseState;
+
 		case actions.USER_AMOUNT:
 		const amountState = Object.assign({}, state, {
 			amount: action.amount

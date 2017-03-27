@@ -51,6 +51,57 @@ const fetchAPI = () => {
 	}
 }
 
+const FETCH_BASEAPI_SUCCESS = 'FETCH_BASEAPI_SUCCESS';
+const fetchBaseAPISuccess = (data) => {
+	return{
+		type: FETCH_BASEAPI_SUCCESS,
+		data: data
+	}
+}
+
+const FETCH_BASEAPI_ERROR = 'FETCH_BASEAPI_ERROR';
+const fetchBaseAPIError = (error) => {
+	return{
+		type: FETCH_BaseAPI_ERROR,
+		error: error
+	}
+}
+
+const fetchBaseAPI = (base) => {
+	console.log(base)
+	return (dispatch) => {
+		const url = 'https://openexchangerates.org/api/latest.json?app_id=21b80883e2ef46588d89236f9b3dc5c5';
+		return fetch(url).then((res) => {
+			if(res.status < 200 || res.status >= 300) {
+				const error = new Error(res.statusText);
+				error.response = res;
+				throw error;
+			}
+			return res;
+		})
+		.then(res => res.json())
+		.then((data) => {
+			// if ( typeof fx !== "undefined" && fx.rates ) {
+                fx.base = base;
+                data.base = fx.base;
+            // } else {
+            //     var fxSetup = {
+            //         rates : data.rates,
+            //         base : base
+            //     }
+            // }
+			return dispatch(
+				fetchAPISuccess(data)
+			);
+		})
+		.catch((error) => {
+			return dispatch(
+				fetchAPIError(error)
+			)
+		});
+	}
+}
+
 const USER_AMOUNT = 'USER_AMOUNT';
 const addUserAmount = (amount) => {
 	return{
@@ -96,7 +147,7 @@ const BASE_RATE = 'BASE_RATE';
 const changeBase = (baseRate) => {
 	return{
 		type: BASE_RATE,
-		baseRate: baseRate
+		baseRate: baseRate,
 	}
 }
 
@@ -107,6 +158,14 @@ exports.fetchAPISuccess = fetchAPISuccess;
 
 exports.FETCH_API_ERROR = FETCH_API_ERROR;
 exports.fetchAPIError = fetchAPIError;
+
+exports.fetchBaseAPI = fetchBaseAPI;
+
+exports.FETCH_BASEAPI_SUCCESS = FETCH_BASEAPI_SUCCESS;
+exports.fetchBaseAPISuccess = fetchBaseAPISuccess;
+
+exports.FETCH_BASEAPI_ERROR = FETCH_BASEAPI_ERROR;
+exports.fetchBaseAPIError = fetchBaseAPIError;
 
 exports.USER_AMOUNT = USER_AMOUNT;
 exports.addUserAmount = addUserAmount;

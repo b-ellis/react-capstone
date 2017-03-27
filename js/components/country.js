@@ -25,7 +25,13 @@ class Country extends React.Component{
 		this.props.dispatch(actions.exchange(exchange));
 	}
 	mouseEnter(){
-		this.props.dispatch(actions.hoverRate(this.props.rates, this.props.text));
+		let hoverRate;
+		if(this.props.baseRate){
+			hoverRate = this.props.baseRate * (1 / this.props.rates);
+		} else {
+			hoverRate = 1 * (1 / this.props.rates);
+		}
+		this.props.dispatch(actions.hoverRate(hoverRate, this.props.text));
 		this.props.dispatch(actions.hoverInfo(true));
 	}
 	mouseLeave(){
