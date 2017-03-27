@@ -31,7 +31,8 @@ class Country extends React.Component{
 		} else {
 			hoverRate = 1 * (1 / this.props.rates);
 		}
-		this.props.dispatch(actions.hoverRate(hoverRate, this.props.text));
+		const rate = Number(hoverRate.toFixed(5))
+		this.props.dispatch(actions.hoverRate(rate, this.props.text));
 		this.props.dispatch(actions.hoverInfo(true));
 	}
 	mouseLeave(){
