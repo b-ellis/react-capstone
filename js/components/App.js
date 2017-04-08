@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import fx from 'money';
 import getRate from 'money';
-import {Glyphicon} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
 import actions from '../actions/index';
 
@@ -18,7 +18,7 @@ class App extends React.Component{
 		this.displayInfo = this.displayInfo.bind(this);
 		this.displayApp = this.displayApp.bind(this);
 		this.state = {
-			content: 'app'
+			content: 'info'
 		}
 	}
 	componentDidMount(){
@@ -69,22 +69,16 @@ class App extends React.Component{
 				<div>
 					<Navbar />
 					<div className='content'>
-						<div style={{margin:'10px'}}>
-							<Glyphicon glyph='remove' onClick={this.displayApp} style={{cursor:'pointer', float:'right', color:'#ccc'}}/>
-						</div>
-						<h3 style={{textAlign:'center', color:'#ccc'}}>Info</h3>
-						<div style={{margin:'30px'}}>
-							<p style={{textAlign:'center', margin:'auto 0', color:'#ccc'}}>This is a currency exchanage application <br />
-							The starting rate is based off of the United States Dollar 
-							</p>
-						</div>
-						<div>
-							<p style={{textAlign:'center', margin:'auto 0', color:'#ccc'}}>How to use: <br />
-							Enter an amount in the top form <br />
-							Select the base rate <br />
-							Select a currency to view the exchange rate of that amount <br />
-							The output is displayed in the bottom form 
-							</p>
+						<div style={{margin:'inherit'}}>
+							<h1 style={{textAlign:'center', color:'#ccc'}}>Currency Exchange Calculator</h1>
+							<div style={{margin:'30px'}}>
+								<p style={{textAlign:'center', margin:'auto 0', color:'#ccc'}}>
+								The starting rate is based off of the United States Dollar 
+								</p>
+							</div>
+							<div style={{textAlign:'center'}}>
+								<Button onClick={this.displayApp}> Start </Button>
+							</div>
 						</div>
 					</div>
 				</div>
