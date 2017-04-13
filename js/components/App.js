@@ -61,6 +61,9 @@ class App extends React.Component{
 							  baseRate={this.props.rate}/>
 						<Output state={this.props.state} exchange={this.props.state.exchange} />
 					</div>
+					<div className='footerdiv'>
+						<h5 className='built'>Built by <a href='https://b-ellis.github.io/Portfolio'>Brad Ellis</a></h5>
+					</div>
 				</div>
 			)
 
@@ -80,6 +83,9 @@ class App extends React.Component{
 								<Button onClick={this.displayApp}> Start </Button>
 							</div>
 						</div>
+					</div>
+					<div className='footerdiv'>
+						<h5 className='built'>Built by <a href='https://b-ellis.github.io/Portfolio'>Brad Ellis</a></h5>
 					</div>
 				</div>
 			)

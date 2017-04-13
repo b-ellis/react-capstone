@@ -186,3 +186,16 @@ output{
     padding-bottom: 6px;
     background: #fff;
 }
+.footerdiv{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	height: 50px;
+    border-top: 1px solid #ccc;
+    color: #ccc;
+    background-color: rgba(100, 107, 78, 0.8);
+}
+.built{
+	padding-left: 10px;
+	color: #ccc;
+}
